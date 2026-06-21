@@ -29,6 +29,7 @@ _ENV_VAR_MAP: Dict[str, str] = {
     "pandaset_data_root": "PANDASET_DATA_ROOT",
     "kitti360_data_root": "KITTI360_DATA_ROOT",
     "nuscenes_data_root": "NUSCENES_DATA_ROOT",
+    "truckdrive_data_root": "TRUCKDRIVE_DATA_ROOT",
 }
 
 
@@ -57,6 +58,7 @@ class DatasetPaths:
     pandaset_data_root: Optional[Path] = None
     kitti360_data_root: Optional[Path] = None
     nuscenes_data_root: Optional[Path] = None
+    truckdrive_data_root: Optional[Path] = None
 
     # 2. Derived paths (if not explicitly set, will be derived from primary roots in __post_init__)
     py123d_logs_root: Optional[Path] = field(default=None, repr=False)
@@ -140,6 +142,7 @@ class DatasetPaths:
             "wod_perception": self.wod_perception_data_root,
             "pandaset": self.pandaset_data_root,
             "kitti360": self.kitti360_data_root,
+            "truckdrive": self.truckdrive_data_root,
         }
         return mapping.get(dataset)
 
